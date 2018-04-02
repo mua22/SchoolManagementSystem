@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/classes', 'Teacher\SectionsController@index');
+Route::get('/home/classes/{id}', 'Teacher\SectionsController@showCourse');
+Route::get('/home/classes/attendance/{id}', 'Teacher\SectionsController@showAttendance');
+Route::post('/home/classes/attendance/save/{id}', 'Teacher\SectionsController@saveAttendance');

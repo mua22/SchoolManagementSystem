@@ -10,6 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
     use EntrustUserTrait;
+
+    /**
+     * One user has many sections which he teaches
+     */
+    public function courses()
+    {
+        return $this->hasMany('App\Course','teacher_id');
+    }
     /**
      * The attributes that are mass assignable.
      *
